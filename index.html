@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画像解析アプリ - Azure OpenAI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>画像解析アプリ</h1>
+            <p>画像を選択してAIに解析させましょう</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="file-input-wrapper">
+                    <input type="file" id="imageInput" accept="image/*" />
+                    <label for="imageInput" class="file-input-label">
+                        <span class="upload-icon">📁</span>
+                        画像を選択
+                    </label>
+                </div>
+                
+                <div class="image-preview" id="imagePreview">
+                    <img id="previewImg" alt="プレビュー画像" />
+                </div>
+            </div>
+
+            <div class="prompt-section">
+                <label for="promptSelect">プロンプトを選択:</label>
+                <select id="promptSelect">
+                    <option value="">プロンプトを選択してください</option>
+                </select>
+                
+                <div class="custom-prompt">
+                    <label for="customPrompt">カスタムプロンプト（オプション）:</label>
+                    <textarea id="customPrompt" placeholder="独自のプロンプトを入力..."></textarea>
+                </div>
+            </div>
+
+            <div class="action-section">
+                <button id="analyzeBtn" class="analyze-btn" disabled>画像を解析</button>
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <span>解析中...</span>
+                </div>
+            </div>
+
+            <div class="result-section" id="resultSection">
+                <h2>解析結果</h2>
+                <div class="result-content" id="resultContent"></div>
+                <button id="copyBtn" class="copy-btn">結果をコピー</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
